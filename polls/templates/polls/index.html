@@ -1,13 +1,25 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+
+<div id="details">
 
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        <li><a href="#" id="{{question.id}}" onclick="getDetails(this.id);">{{ question.question_text }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+
+</div>
+<!--
+
+
+
+-->
+<script type="text/javascript" src="{% static 'polls/javascript/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'polls/javascript/functions.js' %}"></script>

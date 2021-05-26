@@ -1,3 +1,7 @@
+{% load static %}
+
+
+
 <h1>{{ question.question_text }}</h1>
 
 <ul>
@@ -6,4 +10,8 @@
 {% endfor %}
 </ul>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<a href="#"  onclick="getDetails(this.id);"  id="{{question_id}}">Vote again?</a>
+
+
+<script type="text/javascript" src="{% static 'polls/javascript/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'polls/javascript/functions.js' %}"></script>
